@@ -1,8 +1,7 @@
 ---
-jupyter: python3
 title: "Веб скрапинг буюу веб хуудаснаас хайчилбар аван өгөгдөл цуглуулах"
 subtitle: ""
-abstract: Веб хуудас буюу HTML форматтай документаас хэрэгтэй өгөгдлөө гарган авахыг веб скрапинг гэдэг. Веб хуудсыг сонингийн цаас мэтээр төсөөлж болох бөгөөд веб хуудас дээрээс хэрэгтэй мэдээллээ компьютерийн програм ашиглан автоматаар гаргаж авахыг веб скрапинг гэсэн нь сонин уншигчид түүн дээрх өөрт хэрэгтэй нийтлэлийг хайчлан авдагтай зүйрлэсэн нэр томъёо юм. Энэхүү төслөөр өгөгдөл цуглуулах үндсэн аргуудын нэг болоод буй веб скрапингийн талаарх ерөнхий ойлголт, үүнийг Python хэл ашиглан хэрхэн хэрэгжүүлэх тухай товч заавар ба практикийн бодит кейс зэргийг авч үзнэ. Мөн HTML-тэй төстэй XML форматтай документаас өгөгдөл ялгаж авах асуудал хөндөгдсөн. Түүнчлэн веб скрапинг ажлын үеэр баримтлах зарчимтай танилцуулаад улмаар тус зарчмыг хэрхэн сахин мөрдөж буйг үлгэрчлэн харуулна.
+abstract: Веб хуудас буюу HTML форматтай документаас хэрэгтэй өгөгдлөө гарган авахыг веб скрапинг гэдэг. Веб хуудсыг сонингийн цаас мэтээр төсөөлж болох бөгөөд веб хуудас дээрээс хэрэгтэй мэдээллээ компьютерийн програм ашиглан автоматаар гаргаж авахыг веб скрапинг гэсэн нь сонин уншигчид түүн дээрх өөрт хэрэгтэй нийтлэлийг хайчлан авдагтай зүйрлэсэн нэр томъёо юм. Энэхүү төслөөр өгөгдөл цуглуулах үндсэн аргуудын нэг болоод буй веб скрапингийн талаарх ерөнхий ойлголт, үүнийг R хэл ашиглан хэрхэн хэрэгжүүлэх тухай товч заавар ба практикийн бодит кейс зэргийг авч үзнэ. Мөн HTML-тэй төстэй XML форматтай документаас өгөгдөл ялгаж авах асуудал хөндөгдсөн. Түүнчлэн веб скрапинг ажлын үеэр баримтлах зарчимтай танилцуулаад улмаар тус зарчмыг хэрхэн сахин мөрдөж буйг үлгэрчлэн харуулна.
 abstract-title: Хураангуй
 author: "Г.Махгал"
 date: 2025-11-25
@@ -61,7 +60,7 @@ link-citations: true
 
 Веб хуудсыг HTML @w3schools_html_reference хэлээр бичдэг. Энэ нь `<html>` гэж эхлээд `</html>` гэж дуусна. Үүн шиг элементийг тиг гэнэ. Хуудасны гол агуулга `<body></body>` тиг дотор байрлана. Мэдээж веб хуудас дотор ямар мэдээлэл орох бас мэдээллийг хэрхэн зохион байгуулахаас шалтгаалж үндсэн `<body></body>` тиг дотор `<div></div>`, `<p></p>`, `<img>` гэх мэтчилэн тигүүдийг тухайн зохион байгуулалтын дагуу ашиглана. Энд `<p></p>` параграф, `<img>` зураг оруулах зориулалттай.
 
-Эдгээр элементүүд нь хоорондоо багталцсан буюу салбарласан мод мэт бүтэц үүсгэнэ. Энэ бүтэц нь веб хөтчөөр уншигдах үед Document Object Model (DOM) @enwiki:1316812336 гэдэг загвар болж хувирдаг. DOM нь HTML документыг мод хэлбэрээр төлөөлж, програмчлалын аргаар (жишээлбэл веб хөтөч дээр JavaScript хэлээр эсвэл веб скрапингийн үед Python хэлний BeautifulSoup, lxml гэх мэт сангаар) документын агуулга болон бүтэцтэй нь харьцах боломж олгодог.
+Эдгээр элементүүд нь хоорондоо багталцсан буюу салбарласан мод мэт бүтэц үүсгэнэ. Энэ бүтэц нь веб хөтчөөр уншигдах үед Document Object Model (DOM) @enwiki:1316812336 гэдэг загвар болж хувирдаг. DOM нь HTML документыг мод хэлбэрээр төлөөлж, програмчлалын аргаар (жишээлбэл веб хөтөч дээр JavaScript хэл эсвэл веб скрапингийн үед R хэлний rvest гэх мэт багц ашиглаж) документын агуулга болон бүтэцтэй нь харьцах боломж олгодог.
 
 Ийм DOM бүтэцтэй байдал нь веб хуудасны элементүүд рүү (selector ашиглан) хандаж улмаар мэдээллийг нь ялган авах буюу веб скрапинг хийх боломжийг бүрдүүлдэг.
 
@@ -113,40 +112,38 @@ DoS халдлага @cloudflare_dos_attack мэт веб серверийг а�
 
 Веб скрапинг ажлын эхэнд зайлшгүй хийх үйлдэл бол HTML документыг татаж авах явдал юм. Үүнд *requests* модул ашиглана.
 
-```{python}
+```{r}
 #| eval: false
 
-import requests
+url <- "https://site.num.edu.mn/staffs"
 
-url = "https://site.num.edu.mn/staffs"
-
-response = requests.get(url)
-html = response.text
+response <- httr::GET(url)
+html <- httr::content(response, "text", encoding = "UTF-8")
 ```
 
 ## JavaScript үл шаардах веб скрапинг
 
-*requests* модул ашиглан HTML хуудас татаж авна. Харин HTML документыг DOM загвараар хөрвүүлэхэд *BeautifulSoup* сан ашиглана. Мөн HTML хэлний дүрмээр задлан ялгал хийх хэрэгсэл шаардлагатай. Ийм *html.parser* гэдэг Python стандарт сан байдаг ч *lxml* зэрэг илүү сайн задлан ялгагч ашиглахыг зөвлөдөг. Эдгээрийг `pip install requests beautifulsoup4 lxml` тушаалаар суулгана.
+*httr* багц ашиглан HTML хуудас татаж авна. Харин HTML документыг DOM загвараар хөрвүүлэхэд *rvest* багц ашиглана.
 
-```{python}
+```{r}
 #| eval: false
 
-from bs4 import BeautifulSoup
-
-soup = BeautifulSoup(html, "lxml")
+html_dom <- rvest::read_html(html)
 ```
 
 Ийнхүү HTML документыг DOM загвараар хөрвүүлэн боловсруулсаны дараа веб скрапингийн гол цөм болох өгөгдөл "хайчилж" авах ажил эхэлнэ. Жишээлэн элементийг `id` аттрибутаар нь хайн олох кодыг дор бичив.
 
-```{python}
+```{r}
 #| eval: false
 
 # units гэсэн id аттрибуттай элементийг хайж олох
-units = soup.find(id="units")
-print(units)
+html_dom |>
+	rvest::html_element("#units") ->
+	units
+units |> as.character() |> cat()
 ```
 
-Үүнээс гадна элементийн нэр, классын нэр зэргээр хайж олох арга бий. Эдгээр үйлдлийг `soup.find("p")`, `soup.find_all("div")`, `soup.find_all("div", class_="members")` гэх мэтчилэн гүйцэтгэнэ. Цаашилбал сонгосон элементийн тесктийг `item.text.strip()`, аттрибутыг `img["src"]` гэж авна.
+Үүнээс гадна элементийн нэр, классын нэр зэргээр хайж олох арга бий. Эдгээр үйлдлийг `page |> rvest::html_elements("p")`, `page |> rvest::html_elements(".members")` гэх мэтчилэн гүйцэтгэнэ. Цаашилбал сонгосон элементийн тесктийг `units |> rvest::html_text2()`, аттрибутыг `units |> rvest::html_attr("id")` байдлаар олно.
 
 Дээрх кодыг ажиллуулбал дараах үр дүн гарна.
 
@@ -159,106 +156,111 @@ print(units)
 
 Веб скрапингаар авах мэдээлэл нь HTML документыг DOM загварт хөрвүүлсэний дараа JavaScript код ажиллахад веб серверээс дуудагдан ачаалагддаг бол JavaScript дэмждэг веб скрапинг хийнэ.
 
-JavaScript ажиллуулан веб скрапинг хийхэд ашиглаж болох модул гэвэл *playwright* байна. Үүнийг `pip install playwright` тушаалаар нэмж суулгана. Мөн энэ нь веб хөтөч дээр суурилж ажиллах тул түүнийг нь `playwright install` тушаалаар суулгана. Тус тушаалаар Chromium, Firefox, WebKit зэрэг веб хөтчийн бинар суулгац татагдан автоматаар сууна.
+JavaScript ажиллуулан веб скрапинг хийхэд ашиглаж болох багц гэвэл *chromote* болон *RSelenium* зэргийн нэрийг дурдаж болно. Эдгээрээс *chromote* багцыг ашиглана.
 
-```{python}
+```{r}
 #| eval: false
 
-import asyncio
-from playwright.async_api import async_playwright
+load_html <- function(url, wait = 5) {
 
-async def scrap(url):
-  async with async_playwright() as p:
-    browser = await p.chromium.launch(headless=True)
-    page = await browser.new_page()
-    await page.goto(url)
-    html = await page.content()
-    await browser.close()
-    return html
+	# 1. Chrome session үүсгэх (Headless горимоор)
+	b <- chromote::ChromoteSession$new()
 
-html = await scrap("https://site.num.edu.mn/staffs")
+	# 2. Тухайн веб сайт руу хандах
+	# Page.navigate функц нь хуудсыг дуудна
+	b$Page$navigate(url)
+
+	# 3. Хуудас бүрэн ачаалж, AJAX хүсэлтүүд дуусахыг хүлээх
+	# Хялбар шийдэл: Тодорхой хугацаанд хүлээх (Жишээ нь 5 секунд)
+	# Энэ нь JavaScript ажиллаж, мэдээллээ татаж авах боломж олгоно.
+	Sys.sleep(5)
+
+	# 4. Бүрэн рендер хийгдсэн HTML бүтцийг (DOM) JavaScript ашиглан татаж авах
+	# document.documentElement.outerHTML гэдэг нь тухайн үеийн бүх HTML кодыг авна
+	html_string <- b$Runtime$evaluate("document.documentElement.outerHTML")$result$value
+
+	# 5. Chrome session-ийг хаах
+	b$close()
+
+	# 6. Гарсан үр дүнг функцийн утга болгон буцаах
+	html_string
+
+}
+
+html <- load_html("https://site.num.edu.mn/staffs")
 ```
 
 ## HTML документыг үзэмжтэй болгох
 
-HTML документын бичиглэл хүн уншихад төвөгтэй байлаа. Өөрөөр хэлбэл `<div>` гэж эхэлсэн элемент чухам хаана `</div>` гэж хаагдаж буйг харахад бэрхшээлтэй байна. Хэрэв элементийн эхлэл төгсгөл бүрийг нэг мөрд бичиж бас эдгээр нь цогц нэг элемент тул мөрийн эхнээс ижил зай бүхий догол мөрд жигдлэн бичвэл HTML документыг уншихад хялбар болдог. Ийнхүү үзэмжтэй болгоход *BeautifulSoup* классын `prettify()` функц ашиглана.
+HTML документын бичиглэл хүн уншихад төвөгтэй байлаа. Өөрөөр хэлбэл `<div>` гэж эхэлсэн элемент чухам хаана `</div>` гэж хаагдаж буйг харахад бэрхшээлтэй байна. Хэрэв элементийн эхлэл төгсгөл бүрийг нэг мөрд бичиж бас эдгээр нь цогц нэг элемент тул мөрийн эхнээс ижил зай бүхий догол мөрд жигдлэн бичвэл HTML документыг уншихад хялбар болдог. Ийнхүү үзэмжтэй болгон хадгалахад *xml2* багцын `write_html()` функц ашиглана. HTML документыг "htmls/staffs.html" файлд хадгалав.
 
-```{python}
+```{r}
 #| eval: false
 
-from bs4 import BeautifulSoup
-
-soup = BeautifulSoup(html, "html.parser")
-html = soup.prettify()
+html |>
+	xml2::read_html() ->
+	html_dom
+html_dom |>
+	xml2::write_html(file = "htmls/staffs.html", options = "format")
 ```
 
-Эцэст нь гарсан үр дүнг "htmls/staffs.html" файлд хадгалав.
-
-```{python}
-#| eval: false
-
-with open("htmls/staffs.html", "w", encoding="utf-8") as f:
-  f.write(html)
-```
-
-```{python}
+```{r}
 #| echo: false
 
-%reset -f
-
-from pathlib import Path
-
-p = Path("htmls/staffs.html")
-
-with p.open("r", encoding="utf-8") as f:
-  html = f.read()
+html_dom <- xml2::read_html("htmls/staffs.html")
 ```
 
 ## Өгөгдөл ялгаж авах
 
 Одоо HTML документын DOM загварын дагуух бүтцэд тулгуурлан хэрэгтэй өгөгдлөө ялгаж авна. Чухамдаа энэ нь л веб скрапингийн гол ажил болох "хайчилбар" авах үйлдэл юм.
 
-```{python}
-from bs4 import BeautifulSoup
+```{r}
+#| eval: false
 
-soup = BeautifulSoup(html, "lxml")
+emps <- html_dom |> rvest::html_node("#emps")
 
-emps = soup.find(id="emps")
+members <- emps |> rvest::html_nodes("div.members")
 
-members = emps.find_all("div", class_="members")
+results <- list()
 
-results = []
+for (m in members) {
+	# (1) Ажилчдын нэр (<h1> -> <a> -> text)
+	h1 <- m |> rvest::html_node("h1")
+	name <- h1 |> rvest::html_text(trim = TRUE)
 
-for m in members:
-  # (1) Ажилчдын нэр (<h1> -> <a> -> text)
-  h1 = m.find("h1")
-  name = h1.get_text(strip=True) if h1 else None
-
-  # (2) Албан тушаал (<h1> элементийн яг дараагийн <p>)
+	# (2) Албан тушаал (<h1> элементийн яг дараагийн <p>)
   # <h1> -> parent element -> first <p> element
-  first_p = h1.find_parent().find_all("p") if h1 else []
-  position = first_p[0].get_text(strip=True)[1:] if len(first_p) > 0 else None
+	position <- h1 |>
+		xml2::xml_parent() |>
+		rvest::html_node("p") |>
+		rvest::html_text(trim = TRUE)
+	
+	# Албан тушаалын өмнөх чагтыг зайлуулах
+	position <- if (!is.na(position) && nchar(position) > 0) {
+		substring(position, 2) 
+	} else {
+		NA_character_
+	}
 
-  # (3) имэйл, утас, ажлын өрөө агуулсан <p> элементүүд
-  right_col = m.find_all("div", class_="col-md-4")
-  p_items = []
-
-  if len(right_col) > 1:
-    for p in right_col[1].find_all("p"):
-      text = p.get_text(strip=True)
-      p_items.append(text)
+	# (3) имэйл, утас, ажлын өрөө агуулсан <p> элементүүд
+	right_col <- m |> rvest::html_nodes("div.col-md-4")
+	details <- character(0)
+	if (length(right_col) > 1) {
+		details_col <- right_col[[2]]
+		details <- details_col |>
+			rvest::html_nodes("p") |>
+			rvest::html_text(trim = TRUE)
+	}
 
   # (4) Үр дүнг хадгалах
-  results.append({
-    "name": name,
-    "position": position,
-    "details": p_items    # [имэйл, утас, ажлын өрөө]
-  })
+	results[[""]] <- c(
+		name, position, details
+	)
+
+}
 
 print(results)
 ```
-
-Дээрх кодын `first_p[0].get_text(strip=True)[1:]` мөрийн төгсгөлд `[1:]` гэсэн нь ажилчдын албан тушаалын өмнөх # тэмдгийг гээж орхих зорилготой.
 
 Одоо нэг асуудал гарсан нь тэнхимүүдийн багш, ажилчдын мэдээллийг авах явдал юм. Асуудал гэсний шалтгаан уг мэдээлэл веб хуудсын зүүн гар талын баганад буй цэс дэх линк дээр товшиход бас л JavaScript кодын тусламжтай ачаалагдаж байгаад оршино. Линк дээр товшиход ямар JavaScript ажиллахыг @fig-link-inspection зураг дээр үзүүлсэн шиг инспект хийн харж болно.
 
@@ -390,92 +392,81 @@ $(function() {
 
 1002081, 1001298, 1001296, 1001297 дөрвөн утгыг гаргаж авах үйлдлийг ч програмчилж болно.
 
-```{python}
+```{r}
 #| eval: false
 
-import requests
-from bs4 import BeautifulSoup
+url <- "https://portal.num.edu.mn/handler/myhandler.ashx?nr=14&lng=1&par1=1002076"
+response <- httr::GET(url)
 
-url = "https://portal.num.edu.mn/handler/myhandler.ashx?nr=14&lng=1&par1=1002076"
-response = requests.get(url)
+xml_doc <- xml2::read_xml(response)
 
-soup = BeautifulSoup(response.text, "lxml-xml")
-
-num_units = soup.find_all("row")
-site_units = []
-for unit in num_units:
-  pu = unit.get("Pu")
-  if pu == '1002076':
-    id = unit.get("ID")
-    site_units.append(id)
+xml_doc |>
+  xml2::xml_find_all("//row[@Pu='1002076']") |>
+	xml2::xml_attr("ID") ->
+	site_units
 
 print(site_units)
 ```
 
 Дээрх кодыг ажиллуулбал дараах үр дүн гарна.
 
-```python
-['1002081', '1001298', '1001296', '1001297']
+```r
+"1002081" "1001298" "1001296" "1001297"
 ```
 
-```{python}
+```{r}
 #| eval: false
 
-import requests
-from bs4 import BeautifulSoup
+site_emps <- NULL
+for (unit in site_units) {
+	url <- paste0("https://portal.num.edu.mn/handler/myhandler.ashx?nr=9&lng=1&par1=", unit)
+	response <- httr::GET(url)
+	if (httr::status_code(response) != 200)
+		next
+	xml_doc <- xml2::read_xml(response)
+	emps <- xml_doc |> xml2::xml_find_all("row")
+	if (length(emps) == 0)
+		next
+	names <- xml2::xml_attr(emps, "nm")
+	units <- xml2::xml_attr(emps, "un")
+	positions <- xml2::xml_attr(emps, "pos") |>
+		stringr::str_sub(2) |>
+    stringr::str_split("#")
+	emails <- xml2::xml_attr(emps, "mail")
+	phones <- xml2::xml_attr(emps, "po")
+	offices <- xml2::xml_attr(emps, "bu") |>
+		stringr::str_trim()
+	tibble::tibble(
+		name = names,
+		unit = units,
+		position = positions,
+		email = emails,
+		phone = phones,
+		office = offices
+	) ->
+		df
+		rbind(site_emps, df) -> site_emps
+}
 
-site_emps = []
-for unit in site_units:
-  url = "https://portal.num.edu.mn/handler/myhandler.ashx?nr=9&lng=1&par1=" + unit
-  response = requests.get(url)
-  soup = BeautifulSoup(response.text, "lxml-xml")
-  emps = soup.find_all("row")
-  for emp in emps:
-    site_emps.append({
-      "name": emp.get("nm"),
-      "unit": emp.get("un"),
-      "position": emp.get("pos")[1:].split("#"),
-      "email": emp.get("mail"),
-      "phone": emp.get("po"),
-      "office": emp.get("bu").strip()
-    })
-
-print(site_emps[59:64])
+print(site_emps[60:64,1:2])
 ```
 
-```json
-[{'name': 'Д.Баянжаргал', 'unit': 'Статистик, хэрэглээний математикийн тэнхим', 'position': ['Тэнхимийн эрхлэгч', 'Профессор'], 'email': 'bayanjargal@num.edu.mn', 'phone': '75754400, 77307730 -  3600', 'office': 'Хичээлийн байр 7-401'}, {'name': 'А.Галтбаяр', 'unit': 'Статистик, хэрэглээний математикийн тэнхим', 'position': ['Профессор'], 'email': 'galtbayar@num.edu.mn', 'phone': '75754400, 77307730 -  3603', 'office': 'Хичээлийн байр 8-308'}, {'name': 'А.Энхбаяр ', 'unit': 'Статистик, хэрэглээний математикийн тэнхим', 'position': ['Профессор'], 'email': 'enkhbayar.a@num.edu.mn', 'phone': '75754400, 77307730 -  3603', 'office': 'Хичээлийн байр 8-308'}, {'name': 'Г.Баттөр', 'unit': 'Статистик, хэрэглээний математикийн тэнхим', 'position': ['Профессор'], 'email': 'battur@num.edu.mn', 'phone': '75754400, 77307730 -  3604', 'office': 'Хичээлийн байр 8-100е'}, {'name': 'Ж.Сонинбаяр', 'unit': 'Статистик, хэрэглээний математикийн тэнхим', 'position': ['Зөвлөх дэд профессор'], 'email': 'jsoninbayar@num.edu.mn', 'phone': '75754400, 77307730 -  3606', 'office': 'Хичээлийн байр 8-100е'}]
+```
+# A tibble: 5 × 2
+  name           unit
+  <chr>          <chr>
+1 "Д.Баянжаргал" Статистик, хэрэглээний математикийн тэнхим
+2 "А.Галтбаяр"   Статистик, хэрэглээний математикийн тэнхим
+3 "А.Энхбаяр "   Статистик, хэрэглээний математикийн тэнхим
+4 "Г.Баттөр"     Статистик, хэрэглээний математикийн тэнхим
+5 "Ж.Сонинбаяр"  Статистик, хэрэглээний математикийн тэнхим
 ```
 
-Эцэст нь нь үүнийг *pandas.dataFrame* болгоод зарим мөрийг хэвлэж харуулъя. Үүний тулд эхлээд `pip install pandas` тушаалаар тус багцыг суулгана. Веб скрапинг ажлын үр дүн болох өгөгдлийн зарим хэсгийг @tbl-some-rows-of-scrapped-data дээрээс харж болно.
-
-```{python}
-#| eval: false
-
-import pandas as pd
-
-df = pd.DataFrame(site_emps)
-df[["name","unit"]].iloc[59:64]
-```
-
-```{python}
+```{r}
 #| echo: false
 #| eval: false
 
-import pandas as pd
-
-df.iloc[59:64].to_csv("csvs/site_emps.csv", index=False)
-```
-
-```{python}
-#| echo: false
-#| tbl-cap: Веб скрапинг аргаар цуглуулсан өгөгдлийн эхний хоёр багана дахь зарим мөр
-#| label: tbl-some-rows-of-scrapped-data
-
-import pandas as pd
-
-df = pd.read_csv("csvs/site_emps.csv")
-df[["name","unit"]]
+write.csv(site_emps[60:64,1:2], file = "csvs/site_emps.csv", row.names = FALSE)
 ```
 
 # Дүгнэлт {.unnumbered}
@@ -483,7 +474,7 @@ df[["name","unit"]]
 1. Зориулалтын API байгаагүй тул HTML DOM бүтцийг задалж унших аргаар веб скрапинг хийлээ.
 2. Албан ёсны зөвшөөрөлтэй веб скрапинг хийв.
 3. Веб хуудасны үндсэн контент JavaScript кодоор ачаалагдаж байсан тул тус кодыг уншиж, зохих код бичин скрапинг хийв.
-4. Веб скрапинг хэрэгжүүлэх явцад буюу энэхүү тайлан дахь Python кодыг эхнээс дуустал ажиллуулахад веб сервер рүү нийтдээ 7 удаа хүсэлт илгээсэн байна.
+4. Веб скрапинг хэрэгжүүлэх явцад буюу энэхүү тайлан дахь R кодыг эхнээс дуустал ажиллуулахад веб сервер рүү нийтдээ 7 удаа хүсэлт илгээсэн байна.
 
 # Ашигласан материал {.unnumbered}
 
