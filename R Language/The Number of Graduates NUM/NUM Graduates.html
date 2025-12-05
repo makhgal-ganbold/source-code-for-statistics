@@ -21,7 +21,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="NUM Graduates_files/libs/clipboard/clipboard.min.js"></script>
@@ -36,14 +91,57 @@ ul.task-list li input[type="checkbox"] {
 <link href="NUM Graduates_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="NUM Graduates_files/libs/bootstrap/bootstrap-9aeb16a00607c3fcedce66f7189d5f3d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
 <body class="quarto-light">
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-  
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Агуулга</h2>
+   
+  <ul>
+  <li><a href="#түүхий-өгөгдөл" id="toc-түүхий-өгөгдөл" class="nav-link active" data-scroll-target="#түүхий-өгөгдөл"><span class="header-section-number">1</span> Түүхий өгөгдөл</a></li>
+  <li><a href="#өгөгдөл-бэлдэх" id="toc-өгөгдөл-бэлдэх" class="nav-link" data-scroll-target="#өгөгдөл-бэлдэх"><span class="header-section-number">2</span> Өгөгдөл бэлдэх</a></li>
+  <li><a href="#өгөгдлийн-шинжилгээ" id="toc-өгөгдлийн-шинжилгээ" class="nav-link" data-scroll-target="#өгөгдлийн-шинжилгээ"><span class="header-section-number">3</span> Өгөгдлийн шинжилгээ</a>
+  <ul class="collapse">
+  <li><a href="#түүвэр-дэх-инверсийн-тоо-ашигласан-шинжүүр" id="toc-түүвэр-дэх-инверсийн-тоо-ашигласан-шинжүүр" class="nav-link" data-scroll-target="#түүвэр-дэх-инверсийн-тоо-ашигласан-шинжүүр"><span class="header-section-number">3.1</span> Түүвэр дэх инверсийн тоо ашигласан шинжүүр</a></li>
+  <li><a href="#регрессийн-шугаман-загвар" id="toc-регрессийн-шугаман-загвар" class="nav-link" data-scroll-target="#регрессийн-шугаман-загвар"><span class="header-section-number">3.2</span> Регрессийн шугаман загвар</a></li>
+  </ul></li>
+  <li><a href="#дүгнэлт" id="toc-дүгнэлт" class="nav-link" data-scroll-target="#дүгнэлт">Дүгнэлт</a></li>
+  <li><a href="#ашигласан-материал" id="toc-ашигласан-материал" class="nav-link" data-scroll-target="#ашигласан-материал">Ашигласан материал</a></li>
+  </ul>
+</nav>
 </div>
 <main class="content" id="quarto-document-content">
 
@@ -79,7 +177,364 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-
+<section id="түүхий-өгөгдөл" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Түүхий өгөгдөл</h1>
+<p>Өгөгдлийг МУИС-ийн Нээлттэй өгөгдөл <span class="citation" data-cites="MUIS_OpenData"><a href="#ref-MUIS_OpenData" role="doc-biblioref">[1]</a></span> <a href="https://data.num.edu.mn/dataset/graduation">https://data.num.edu.mn/dataset/graduation</a> веб хуудас дээрээс CSV форматтай файл байдлаар татаж авсан. Татсан файлуудыг data хавтас дотор хадгалав. Файлын нэрийг нээлттэй өгөгдлийн серверээс ирсэн тэр хэвээр үлдээсэн бөгөөд “-YYYY-semester.csv” хэлбэртэй. YYYY нь хичээлийн жилийн эхлэл оныг илэрхийлнэ. Харин semester нь spring эсвэл autumn утгуудын аль нэгийг авна. Жишээлбэл “-2023-autumn.csv” нэр 2023-2024 оны хичээлийн жилийн намрын улирал гэсэн утгатай.</p>
+<p>Файлууд CSV форматтай буюу хүснэгтэлсэн мэдээлэл агуулсан. Хүснэгтүүд дараах багануудтай. Баганын нэрийн ард тайлбарыг нь оруулав.</p>
+<ol type="1">
+<li>бүрэлдэхүүн_сургуулийн_дугаар : Бүрэлдэхүүн,салбар сургуулийн дугаар</li>
+<li>бүрэлдэхүүн_сургууль : Бүрэлдэхүүн,салбар сургуулийн нэр</li>
+<li>хөтөлбөрийн_дугаар : Хөтөлбөрийн дугаар</li>
+<li>хөтөлбөр : Хөтөлбөрийн нэр</li>
+<li>зэрэг : Төгсгөж байгаа хөтөлбөрийн боловсролын зэрэг</li>
+<li>төгсөгчийн_эцэг_эхийн_нэр : Төгсөгчийн эцэг/эхийн нэр</li>
+<li>төгсөгчийн_өөрийн_нэр : Төгсөгчийн өөрийн нэр</li>
+<li>дипломын_дугаар : Төгсөгчийн дипломын дугаар</li>
+<li>төгссөн_жил : Төгсөгчийн төгссөн хичээлийн жил</li>
+<li>төгссөн_улирал : Төгсөгчийн төгссөн хичээлийн жилийн улирал</li>
+</ol>
+<p>Гэхдээ 2021 болон үүнээс өмнөх оны мэдээлэл агуулсан файлууд дахь хүснэгт үүнээс цөөн баганатай. Багануудын нэрийг тайлбартай нь хамт дор жагсаав.</p>
+<ol type="1">
+<li>бүрэлдэхүүн_сургууль : Бүрэлдэхүүн,салбар сургуулийн нэр</li>
+<li>хөтөлбөр : Хөтөлбөрийн нэр</li>
+<li>зэрэг : Төгсгөж байгаа хөтөлбөрийн боловсролын зэрэг</li>
+<li>төгсөгчийн_эцэг_эхийн_нэр : Төгсөгчийн эцэг/эхийн нэр</li>
+<li>төгсөгчийн_өөрийн_нэр : Төгсөгчийн өөрийн нэр</li>
+<li>дипломын_дугаар : Төгсөгчийн дипломын дугаар</li>
+</ol>
+</section>
+<section id="өгөгдөл-бэлдэх" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Өгөгдөл бэлдэх</h1>
+<p>Сэдвийн хамрах хүрээний дагуу байгалийн шинжлэх ухаан, математик, статистикийн мэргэжлээр төгсөгчдийн тоог л авч үзнэ. Ийнхүү Статистик, Хэрэглээний математик, Математик, Физик, Хими мэргэжлээр бакалавр зэрэгтэй төгсөгчдийн тоог ялган авлаа. Үүний тулд дараах код бичиж ажиллуулсан.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(\(){</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  fnames <span class="ot">&lt;-</span> <span class="fu">dir</span>(</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">path =</span> <span class="st">"data"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">pattern =</span> <span class="st">".csv$"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  years <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  semesters <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  programs <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  graduates <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (fname <span class="cf">in</span> fnames) {</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    year <span class="ot">&lt;-</span> <span class="fu">regmatches</span>(fname, <span class="fu">regexpr</span>(<span class="st">"-([[:digit:]]{4})-"</span>, fname))</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    year <span class="ot">&lt;-</span> <span class="fu">regmatches</span>(year, <span class="fu">regexpr</span>(<span class="st">"[[:digit:]]{4}"</span>, year))</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    year <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(year)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    semester <span class="ot">&lt;-</span> <span class="fu">regmatches</span>(fname, <span class="fu">regexpr</span>(<span class="st">"-([[:digit:]]{4})-(autumn|spring).csv"</span>, fname))</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    semester <span class="ot">&lt;-</span> <span class="fu">regmatches</span>(semester, <span class="fu">regexpr</span>(<span class="st">"(autumn|spring)"</span>, semester))</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (semester <span class="sc">==</span> <span class="st">"autumn"</span>) {</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>      semester <span class="ot">&lt;-</span> <span class="st">"fall"</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    X <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> fname, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (program <span class="cf">in</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">"Статистик"</span>,<span class="st">"Статистик, хэрэглээний"</span>),<span class="fu">c</span>(<span class="st">"Хэрэглээний математик"</span>,<span class="st">"Математик, хэрэглээний"</span>),<span class="st">"Математик"</span>,<span class="st">"Физик"</span>,<span class="st">"Хими"</span>)) {</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>      years <span class="ot">&lt;-</span> <span class="fu">c</span>(years, year)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>      semesters <span class="ot">&lt;-</span> <span class="fu">c</span>(semesters, semester)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>      programs <span class="ot">&lt;-</span> <span class="fu">c</span>(programs, program[<span class="dv">1</span>])</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>      graduates <span class="ot">&lt;-</span> <span class="fu">c</span>(graduates, <span class="fu">sum</span>(X<span class="sc">$</span>Хөтөлбөр <span class="sc">%in%</span> program <span class="sc">&amp;</span> X<span class="sc">$</span>Зэрэг <span class="sc">==</span> <span class="st">"Бакалавр"</span>))</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> years,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">semester =</span> semesters,</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">program =</span> programs,</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">graduates =</span> graduates</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>})() <span class="ot">-&gt;</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  graduates</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ийнхүү бэлдсэн хүснэгт бүтэцтэй өгөгдлийн сүүлийн 10 мөрийг харъя.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(graduates, <span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   year semester               program graduates
+51 2022   spring             Статистик        15
+52 2022   spring Хэрэглээний математик         3
+53 2022   spring             Математик         2
+54 2022   spring                 Физик         0
+55 2022   spring                  Хими         7
+56 2023     fall             Статистик         4
+57 2023     fall Хэрэглээний математик         1
+58 2023     fall             Математик         1
+59 2023     fall                 Физик         1
+60 2023     fall                  Хими         4</code></pre>
+</div>
+</div>
+<p>Одоогоор төгсөгчдийн тоог семестер бүрээр гаргаад байна. Хэрэв төгсөгчдийн тоог жилээр авч үзнэ гэвэл өгөгдлийг жилээр бүлэглэнэ. Гэхдээ 2023 оны намрын улирлыг 2022 оны хаврын улиралтай нэгтгээд 2022 оны нийт төгсөгчид гэж үзье.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fall_semesters <span class="ot">&lt;-</span> graduates<span class="sc">$</span>semester <span class="sc">==</span> <span class="st">'fall'</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>graduates<span class="sc">$</span>year[fall_semesters] <span class="ot">&lt;-</span> graduates<span class="sc">$</span>year[fall_semesters] <span class="sc">-</span> <span class="dv">1</span>L</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(fall_semesters)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>({</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  graduates <span class="sc">|&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">group_by</span>(year, program) <span class="sc">|&gt;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">graduates =</span> <span class="fu">sum</span>(graduates)) <span class="sc">|&gt;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">arrange</span>(year, program) <span class="ot">-&gt;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    graduates</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Бэлдсэн өгөгдлийг хэвлэж харъя.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(graduates)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 30 × 3
+# Groups:   year [6]
+    year program               graduates
+   &lt;int&gt; &lt;chr&gt;                     &lt;int&gt;
+ 1  2017 Математик                    11
+ 2  2017 Статистик                    45
+ 3  2017 Физик                        37
+ 4  2017 Хими                         63
+ 5  2017 Хэрэглээний математик        31
+ 6  2018 Математик                    19
+ 7  2018 Статистик                    53
+ 8  2018 Физик                        18
+ 9  2018 Хими                         48
+10  2018 Хэрэглээний математик        28
+# ℹ 20 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="өгөгдлийн-шинжилгээ" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Өгөгдлийн шинжилгээ</h1>
+<p>Төгсөгчдийн тооны хандлагыг шугаман диаграммаар харуулна.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  graduates,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">aes</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> year,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> graduates,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> program,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">group =</span> program</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Он"</span>,</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Төгсөгчдийн тоо"</span>,</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Хөтөлбөр"</span>,</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Хөтөлбөрөөр ангилсан төгсөгчдийн тоо, оноор"</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="NUM-Graduates_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Диаграммаас хөтөлбөр нэг бүрийн хувьд төгсөгчдийн тоо буурах хандлагатай хэмээн таамаглаж болох юм.</p>
+<section id="түүвэр-дэх-инверсийн-тоо-ашигласан-шинжүүр" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="түүвэр-дэх-инверсийн-тоо-ашигласан-шинжүүр"><span class="header-section-number">3.1</span> Түүвэр дэх инверсийн тоо ашигласан шинжүүр</h2>
+<p>Төгсөгчдийн тоо буурах хандлагатай гэсэн таамаглалыг дараах байдлаар томъёолно.</p>
+<p><span class="math display">\[
+\begin{array}{l}
+H_0:\,\text{түүвэр санамсаргүй} \\
+H_1:\,\text{түүвэр буурах хандлагатай}
+\end{array}
+\]</span></p>
+<p>Энэ нь нэг талт таамаглал юм. Хэрэв өсөх хандлагыг авч үзвэл хоёр талт таамаглал болно. Таамаглалыг түүвэр дэх инверсийн тоо ашигласан шинжүүрээр <span class="citation" data-cites="mathstat2023chapter3"><a href="#ref-mathstat2023chapter3" role="doc-biblioref">[2]</a></span> шалгана.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vapply</span>(<span class="at">X =</span> <span class="fu">c</span>(<span class="st">"Математик"</span>, <span class="st">"Статистик"</span>, <span class="st">"Физик"</span>, <span class="st">"Хими"</span>, <span class="st">"Хэрэглээний математик"</span>), <span class="at">FUN =</span> \(program) {</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  graduates<span class="sc">$</span>graduates[graduates<span class="sc">$</span>program <span class="sc">==</span> program] <span class="ot">-&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    graduates</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">outer</span>(graduates, graduates, <span class="at">FUN =</span> <span class="st">"&gt;"</span>) <span class="ot">-&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    inverse</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  inverse[<span class="fu">upper.tri</span>(inverse)] <span class="sc">|&gt;</span> <span class="fu">sum</span>() <span class="ot">-&gt;</span> Tn</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">length</span>(graduates) <span class="ot">-&gt;</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    n</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abs</span>(Tn <span class="sc">-</span> n<span class="sc">*</span>{n<span class="dv">-1</span>}<span class="sc">/</span><span class="dv">4</span>) <span class="sc">*</span> <span class="dv">6</span> <span class="sc">/</span> n<span class="sc">^</span>{<span class="dv">3</span><span class="sc">/</span><span class="dv">2</span>} <span class="ot">-&gt;</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    Z</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># нэг талт таамаглалын p-утга</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pnorm</span>(<span class="at">q =</span> Z, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) <span class="ot">-&gt;</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    p</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(Z, p)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>}, <span class="at">FUN.VALUE =</span> <span class="fu">c</span>(<span class="st">"статистик"</span> <span class="ot">=</span> <span class="dv">0</span>, <span class="st">"p-утга"</span> <span class="ot">=</span> <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           Математик  Статистик      Физик       Хими Хэрэглээний математик
+статистик 1.83711731 1.42886902 1.83711731 1.42886902             1.0206207
+p-утга    0.03309629 0.07652094 0.03309629 0.07652094             0.1537171</code></pre>
+</div>
+</div>
+<p>Гарсан үр дүнг харвал Математик, Физик хоёр хөтөлбөрөөр төгсөгчдийн тоо буурах хандлагатай гэсэн таамаглал <span class="math inline">\(\alpha=0.05\)</span> ач холбогдлын түвшинд батлагджээ.</p>
+</section>
+<section id="регрессийн-шугаман-загвар" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="регрессийн-шугаман-загвар"><span class="header-section-number">3.2</span> Регрессийн шугаман загвар</h2>
+<p>Төгсөгчдийн тоо буурах хандлагатай гэсэн таамаглалыг регрессийн шугаман загварын <span class="citation" data-cites="mathstat2023chapter5"><a href="#ref-mathstat2023chapter5" role="doc-biblioref">[3]</a></span> тусламжтай шалгаж болно. Үүний тулд дараах загвар авч үзнэ.</p>
+<p><span class="math display">\[
+\text{төгсөгчдийн тоо}=\beta_0+\beta_1\cdot\text{он}
+\]</span></p>
+<p>Энэ тохиолдолд таамаглал дараах хэлбэртэй болно.</p>
+<p><span class="math display">\[
+\begin{array}{l}
+H_0:\,\beta_1=0 \\
+H_1:\,\beta_1&lt;0
+\end{array}
+\]</span></p>
+<p>Хэрэв төгсөгчдийн тооны өөрчлөлтийг тайлбарлахад цаг хугацаа (он хувьсагч) нөлөөгүй гэсэн таамаглалыг няцаавал энэ нь төгсөгчдийн тоо хугацаанаас урвуу хамаарах буюу буурах хандлагатайг баталсан явдал болно.</p>
+<p>Таамаглал шалгалтыг R програм дээр <code>lm()</code> болон <code>summary()</code> функцийн тусламжтай хийнэ. Дор шинжүүрийн статистикийн утга болон <span class="math inline">\(p\text{-утга}\)</span> хоёрыг хөтөлбөр тус бүрээр олов. Түүнчлэн оношлогооны дөрвөн диаграммыг <span class="citation" data-cites="LinearModelswithR2014chapter6"><a href="#ref-LinearModelswithR2014chapter6" role="doc-biblioref">[4]</a></span> байгуулсан.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vapply</span>(<span class="at">X =</span> <span class="fu">c</span>(<span class="st">"Математик"</span>, <span class="st">"Статистик"</span>, <span class="st">"Физик"</span>, <span class="st">"Хими"</span>, <span class="st">"Хэрэглээний математик"</span>), <span class="at">FUN =</span> \(x) {</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> graduates <span class="sc">~</span> year, <span class="at">data =</span> graduates, <span class="at">subset =</span> program <span class="sc">==</span> x)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(fit, <span class="at">main =</span> x)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  fit_summary <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  t_value <span class="ot">&lt;-</span> fit_summary<span class="sc">$</span>coefficients[<span class="st">"year"</span>,<span class="st">"t value"</span>]</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  p_one_tailed <span class="ot">&lt;-</span> fit_summary<span class="sc">$</span>coefficients[<span class="st">"year"</span>,<span class="st">"Pr(&gt;|t|)"</span>] <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(t_value, p_one_tailed)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>}, <span class="at">FUN.VALUE =</span> <span class="fu">c</span>(<span class="st">"t статистик"</span> <span class="ot">=</span> <span class="dv">0</span>, <span class="st">"p-утга"</span> <span class="ot">=</span> <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="NUM-Graduates_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="NUM-Graduates_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="NUM-Graduates_files/figure-html/unnamed-chunk-10-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="NUM-Graduates_files/figure-html/unnamed-chunk-10-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="NUM-Graduates_files/figure-html/unnamed-chunk-10-5.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>              Математик   Статистик       Физик        Хими
+t статистик -2.06822787 -2.08129696 -2.73523721 -3.22128521
+p-утга       0.05372283  0.05293374  0.02608035  0.01612056
+            Хэрэглээний математик
+t статистик            -1.4243052
+p-утга                  0.1137347</code></pre>
+</div>
+</div>
+<p>Тоон үр дүнг төгсөгчдийн тоо буурах хандлагатай гэсэн өрсөлдөгч таамаглал <span class="math inline">\(\alpha=0.05\)</span> ач холбогдлын түвшинд батлагдахаар тохиолдол Физик болон Хими хөтөлбөрүүдийн хувьд ажиглагджээ. Гэхдээ эдгээр загваруудын хувьд үлдэгдэл болон хөшүүрэг ихтэй утгууд илэрсэнийг анхаарах хэрэгтэй. Ийм цэгүүдийг өгөгдлөөс хасах эсвэл засах талаар яригддаг ч эдгээр нь ямар ч алдаагүй утга тул хэвээр үлдээнэ.</p>
+<p>Хөшүүргээс бусад оношлогооны үзүүлэлтүүдийг сайжруулахын тулд хамааран хувьсагчийг логарифм эсвэл зэрэгт функцээр хувиргадаг. Шинжилгээнд нормал регрессийн загвар ашиглаж буй тул өгөгдлийг уг загварт нийцүүлэн хувиргана. Ингээд Бокс ба Коксын хувиргалт хийнэ.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vapply</span>(<span class="at">X =</span> <span class="fu">c</span>(<span class="st">"Математик"</span>, <span class="st">"Статистик"</span>, <span class="st">"Физик"</span>, <span class="st">"Хими"</span>, <span class="st">"Хэрэглээний математик"</span>), <span class="at">FUN =</span> \(x) {</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  graduates <span class="ot">&lt;-</span> graduates[graduates<span class="sc">$</span>program <span class="sc">==</span> x,]</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  fit_original <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> graduates <span class="sc">~</span> year, <span class="at">data =</span> graduates)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  bc <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">boxcox</span>(fit_original, <span class="at">plotit =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  lambda <span class="ot">&lt;-</span> bc<span class="sc">$</span>x[<span class="fu">which.max</span>(bc<span class="sc">$</span>y)]</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  bc_transform <span class="ot">&lt;-</span> <span class="cf">function</span>(y, lambda) {</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">abs</span>(lambda) <span class="sc">&lt;</span> <span class="fl">1e-6</span>) {</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">log</span>(y)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>      (y<span class="sc">^</span>lambda <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">/</span> lambda</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  graduates<span class="sc">$</span>graduates <span class="ot">&lt;-</span> <span class="fu">bc_transform</span>(graduates<span class="sc">$</span>graduates, lambda)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> graduates <span class="sc">~</span> year, <span class="at">data =</span> graduates)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(fit, <span class="at">main =</span> x)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  fit_summary <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit)</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  t_value <span class="ot">&lt;-</span> fit_summary<span class="sc">$</span>coefficients[<span class="st">"year"</span>,<span class="st">"t value"</span>]</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>  p_one_tailed <span class="ot">&lt;-</span> fit_summary<span class="sc">$</span>coefficients[<span class="st">"year"</span>,<span class="st">"Pr(&gt;|t|)"</span>] <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(t_value, p_one_tailed)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>}, <span class="at">FUN.VALUE =</span> <span class="fu">c</span>(<span class="st">"t статистик"</span> <span class="ot">=</span> <span class="dv">0</span>, <span class="st">"p-утга"</span> <span class="ot">=</span> <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="NUM-Graduates_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="NUM-Graduates_files/figure-html/unnamed-chunk-11-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="NUM-Graduates_files/figure-html/unnamed-chunk-11-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="NUM-Graduates_files/figure-html/unnamed-chunk-11-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="NUM-Graduates_files/figure-html/unnamed-chunk-11-5.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>              Математик   Статистик      Физик        Хими
+t статистик -2.24082030 -2.16230220 -2.8106173 -3.12668788
+p-утга       0.04427068  0.04831975  0.0241433  0.01764895
+            Хэрэглээний математик
+t статистик            -1.6460384
+p-утга                  0.0875506</code></pre>
+</div>
+</div>
+<p>Оношлогооны диаграммуудаас ажигласан зүйлсийг дор жагсаан бичлээ.</p>
+<ul>
+<li>Математик хөтөлбөрийн Q-Q диаграммыг харвал нумарсан гэмээр хэлбэр ажиглагдана. Иймээс үлдэгдлийн тархалт ассимметр биш гэж сэжиглэнэ.</li>
+<li>Хэрэглээний математик хөтөлбөрийн Q-Q диаграмм буруу харсан S үсэг шиг хэлбэртэй байгаа нь загварын үлдэгдлийн тархалт хэвийнээс өргөн сүүлтэй байгааг илтгэнэ.</li>
+<li>Ерөнхийдөө оношлогооны дөрөв дүгээр диаграммуудаас их хөшүүрэг бүхий утгууд ажиглагдаж байгаа нь төгсөгчдийн тоо их хэлбэлзэлтэйг илтгэж буй явдал юм. Иймээс анх элсэгчдийн тоог загварт тусган оруулбал энэхүү нөхцөл байдал сайжирна гэж таамаглаж байна.</li>
+</ul>
+<p>Харин тоон үр дүн Хэрэглээний математикаас бусад хөтөлбөрөөр төгсөгчдийн тоо буурах хандлагатай гэсэн өрсөлдөгч таамаглалыг <span class="math inline">\(\alpha=0.05\)</span> ач холбогдлын түвшинд баталжээ.</p>
+</section>
+</section>
+<section id="дүгнэлт" class="level1 unnumbered">
+<h1 class="unnumbered">Дүгнэлт</h1>
+<ol type="1">
+<li>МУИС-ийн Нээлттэй өгөгдөл дэх төгсөгчдийн мэдээлэл зөвхөн 2023-2024 оны хичээлийн жилийн намрын улирал дуустал байна.</li>
+<li>Түүвэр дэх инверсийн тоо ашигладаг шинжүүрээр Математик болон Физик бакалаврын хөтөлбөрөөр төгсөгчдийн тоо буурах хандлагатай гэсэн таамаглал <span class="math inline">\(\alpha=0.05\)</span> ач холбогдлын түвшинд батлагдсан.</li>
+<li>Регрессийн шугаман загвар ашигласан шинжилгээгээр төгсөгчдийн тоо буурах хандлагатай нь Математик, Статистик, Физик болон Хими хөтөлбөрүүдийн хувьд <span class="math inline">\(\alpha=0.05\)</span> ач холбогдлын түвшинд батлагдав.</li>
+<li>Хэрэв 2023-2024 оны хичээлийн жилийн намрын улирлаас хойших төгсөгчдийн мэдээлэл байвал төгсөгчдийн тооны хандлагын талаарх дүгнэлт сүүлийн үеийн байдлаар, илүү нарийвчлалтай гарна.</li>
+<li>Мөн төгсөгчдийн тоог зөвхөн байгалийн ухаан, математик, статистикийн салбар төдийгүй бусад салбараар бас анх элсэгчдийн тоог авч үзвэл илүү үнэн бодьтой дүгнэлтэд хүрнэ.</li>
+</ol>
+</section>
+<section id="ашигласан-материал" class="level1 unnumbered">
+<h1 class="unnumbered">Ашигласан материал</h1>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
+<div id="ref-MUIS_OpenData" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">М. У. И. С. (МУИС), <span>“МУИС нээлттэй өгөгдөл.”</span> Монгол Улсын Их Сургууль; <a href="https://data.num.edu.mn" class="uri">https://data.num.edu.mn</a>, 2018--2025.</div>
+</div>
+<div id="ref-mathstat2023chapter3" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Б.Жамъяншарав, <span>“Математик статистик,”</span> Улаанбаатар: МУИС Хэвлэлийн газар, 2023, ch. 3, pp. 153–157.</div>
+</div>
+<div id="ref-mathstat2023chapter5" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Б.Жамъяншарав, <span>“Математик статистик,”</span> Улаанбаатар: МУИС Хэвлэлийн газар, 2023, ch. 5, pp. 217–222.</div>
+</div>
+<div id="ref-LinearModelswithR2014chapter6" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">J. J. Faraway, <span>“Linear models with r,”</span> Second., CRC Press, 2014, ch. 6, pp. 73–97.</div>
+</div>
+</div>
+</section>
 
 </main>
 <!-- /main column -->
