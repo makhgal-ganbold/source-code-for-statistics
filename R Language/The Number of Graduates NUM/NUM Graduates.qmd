@@ -11,13 +11,8 @@ toc: true
 toc-depth: 3
 toc-title: Агуулга
 number-sections: true
-crossref: 
-  fig-title: Зураг
-  fig-prefix: Зураг
-  tbl-title: Хүснэгт
-  tbl-prefix: Хүснэгт
-fig-cap-location: top
-tbl-cap-location: top
+tbl-cap-location: bottom
+fig-cap-location: bottom
 bibliography: references.bib
 csl: ieee.csl
 link-citations: true
